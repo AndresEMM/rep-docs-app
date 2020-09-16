@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/rep-docs-app/static/css/main.63a367d5.chunk.css",
+    "main.js": "/rep-docs-app/static/js/main.5092a00d.chunk.js",
+    "main.js.map": "/rep-docs-app/static/js/main.5092a00d.chunk.js.map",
+    "runtime-main.js": "/rep-docs-app/static/js/runtime-main.198c0157.js",
+    "runtime-main.js.map": "/rep-docs-app/static/js/runtime-main.198c0157.js.map",
+    "static/css/2.d7dd344d.chunk.css": "/rep-docs-app/static/css/2.d7dd344d.chunk.css",
+    "static/js/2.aa2736fb.chunk.js": "/rep-docs-app/static/js/2.aa2736fb.chunk.js",
+    "static/js/2.aa2736fb.chunk.js.map": "/rep-docs-app/static/js/2.aa2736fb.chunk.js.map",
+    "index.html": "/rep-docs-app/index.html",
+    "precache-manifest.4fe687f0594f1c79a535f87bf05f03fb.js": "/rep-docs-app/precache-manifest.4fe687f0594f1c79a535f87bf05f03fb.js",
+    "service-worker.js": "/rep-docs-app/service-worker.js",
+    "static/css/2.d7dd344d.chunk.css.map": "/rep-docs-app/static/css/2.d7dd344d.chunk.css.map",
+    "static/css/main.63a367d5.chunk.css.map": "/rep-docs-app/static/css/main.63a367d5.chunk.css.map",
+    "static/js/2.aa2736fb.chunk.js.LICENSE.txt": "/rep-docs-app/static/js/2.aa2736fb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.198c0157.js",
+    "static/css/2.d7dd344d.chunk.css",
+    "static/js/2.aa2736fb.chunk.js",
+    "static/css/main.63a367d5.chunk.css",
+    "static/js/main.5092a00d.chunk.js"
+  ]
+}
