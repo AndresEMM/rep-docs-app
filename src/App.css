@@ -1,38 +1,128 @@
 .App {
   text-align: center;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.media {
+  margin-top: 5%;
+  padding: 0;
+  background-color: cadetblue;
+}
+
+.media .video-react {
+  padding-top: 30% !important;
+  margin: 2% 20% !important;
+  width: auto !important;
+}
+
+.media p {
+  padding-top: 3%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: calc(18px + 4vmin);
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  font-size: calc(3px + 2vmin);
   color: white;
+}
+
+.img-download img {
+  margin-top: 20%;
+}
+
+.img-links img {
+  margin-top: 20%;
+}
+
+.networks-ban img {
+  margin: 20% 0;
+}
+
+.networks-ban h2 {
+  font-size: calc(18px + 3vmin);
+  margin-top: 1%;
+}
+
+.networks-ban {
+  margin: 5%;
+  background-color: wheat;
+  border-radius: 25px;
+  color: black;
+}
+
+.form {
+  margin: 5%;
+  border-radius: 25px;
+  color: black;
+}
+
+.form .title {
+  font-size: calc(18px + 3vmin);
+  margin-top: 0;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+.chars  {
+  margin: 5%;
+  padding: 10%;
+  border-radius: 25px;
+  border-style: groove;
+  justify-content: center !important;
+  color: black;
+}
+
+.chars h3 {
+  margin-top: -10% !important;
+  padding-bottom: 15% !important;
+}
+
+.footer {
+  padding: 1%;
+  background-color: #1B396A;
+}
+
+.footer span {
+  color: #d9d9d9; 
+  opacity: 0.5;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+  text-decoration: none;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 5px;
+}
+input[type=submit] {
+  width: 100%;
+  margin-top: 20%;
+}
+
+label {
+  text-align: left;
+  width: 100%;
+  margin-top: 10px;
 }
