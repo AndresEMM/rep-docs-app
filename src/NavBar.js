@@ -3,28 +3,28 @@ import Nav from 'react-bootstrap/Nav';
 import {
   BrowserRouter, 
   Switch,
-  Route,
+  /*Route,*/
   NavLink,
-  HashRouter
+  /*HashRouter*/
 } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import Statistics from "./Statistics";
 import Form from "./Form";
-import Sesion from "./Sesion";
+//import Sesion from "./Sesion";
 import Login from './Login';
 import Dashboard from './Dashboard';
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicRoute from './Utils/PublicRoute';
-import axios from 'axios';
-import { getToken, removeUserSession, setUserSession } from './Utils/Common';
+//import axios from 'axios';
+import { getToken/*, removeUserSession, setUserSession*/ } from './Utils/Common';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function NavBar() {
 
     //const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
-    const [authLoading, setAuthLoading] = useState(true);
+    const [authLoading/*, setAuthLoading*/] = useState(true);
  
     useEffect(() => {
       const token = getToken();

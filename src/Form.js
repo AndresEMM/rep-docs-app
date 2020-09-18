@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -33,8 +33,8 @@ import { useForm } from "react-hook-form";
   ));
 
 function  Form() {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register/*, handleSubmit*/ } = useForm();
+    //const onSubmit = data => console.log(data);
    
     return (
         <Container>

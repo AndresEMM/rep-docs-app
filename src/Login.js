@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from 'axios';
-import { setUserSession } from './Utils/Common';
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+/*import axios from 'axios';
+import { setUserSession } from './Utils/Common';*/
+import { Button, FormGroup, FormControl/*, ControlLabel*/ } from "react-bootstrap";
 import "./Login.css";
 
 export default function Login(props) {
@@ -10,9 +10,9 @@ export default function Login(props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  function validateForm() {
+  /*function validateForm() {
     return (username.length > 0 && password.length > 0);
-  }
+  }*/
 
   const handleLogin = () => {
     setError(null);

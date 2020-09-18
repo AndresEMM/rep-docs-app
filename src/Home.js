@@ -27,7 +27,7 @@ class Home extends Component {
   render(){
     return (
         <>
-        <img src={"https://via.placeholder.com/"+this.state.width+"x450"} className="imgBanner" />
+        <img src={"https://via.placeholder.com/"+this.state.width+"x450"} className="imgBanner" alt="Placeholder" />
         <ImgDownload/>
         <Media/>
         <ImgLink/>
