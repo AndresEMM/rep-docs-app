@@ -126,3 +126,61 @@ label {
   width: 100%;
   margin-top: 10px;
 }
+
+.contenedorGobierno {
+  z-index:1000;
+  position: relative;
+}
+
+.container-cabecera {
+  padding-bottom:30px;
+  background-color: white;
+}
+
+.container-cabecera img{
+  width: auto;
+  
+}
+
+.no-gutters .col-md-12{
+  max-width:60%;
+}
+
+#pleca_1 {
+  z-index:2001;
+}
+
+#pleca_2 {
+  z-index:2001;
+}
+
+#pleca_3 {
+  z-index:2001;
+}
+
+.plecaTECNM {
+  width:17% !important;
+  height:auto; 
+  min-width:70px;
+}
+
+.contenedorAccesibilidad{
+  z-index:2000; 
+  top: 5%;
+  right: 10%;
+  position: absolute;
+  width: 35%;
+}
+
+.idiomas a img{
+  height:6%;
+  width:6%;
+}
+
+.contraste svg{
+  height: 1em;
+}
+
+.contraste, .aumentaLetra, .reduceLetra, .resetLetra{
+  color:#1B396A;
+}

@@ -5,6 +5,7 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
+import Header from "./Header";
 import Home from "./Home";
 import Statistics from "./Statistics";
 import Form from "./Form";
@@ -40,6 +41,7 @@ class NavBar extends Component {
       
         <HashRouter>
           <header className="App-header">
+            <Header/>
             <img src={"https://via.placeholder.com/"+this.state.width+"x135"} className="imgBanner" />
         <Nav justify variant="pills">
           <Nav.Item>
