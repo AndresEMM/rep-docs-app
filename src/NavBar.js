@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import {
+  BrowserRouter, 
+  Switch,
   Route,
   NavLink,
   HashRouter
@@ -10,42 +12,48 @@ import Home from "./Home";
 import Statistics from "./Statistics";
 import Form from "./Form";
 import Sesion from "./Sesion";
+import Login from './Login';
+import Dashboard from './Dashboard';
+import PrivateRoute from './Utils/PrivateRoute';
+import PublicRoute from './Utils/PublicRoute';
+import axios from 'axios';
+import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class NavBar extends Component {
+function NavBar() {
 
     //const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
+    const [authLoading, setAuthLoading] = useState(true);
+ 
+    useEffect(() => {
+      const token = getToken();
+      if (!token) {
+        return;
+      }
+   
+      /*axios.get(`http://localhost:4000/verifyToken?token=${token}`).then(response => {
+        setUserSession(response.data.token, response.data.user);
+        setAuthLoading(false);
+      }).catch(error => {
+        removeUserSession();
+        setAuthLoading(false);
+      });*/
+    }, []);
+   
+    if (authLoading && getToken()) {
+      return <div className="content">Checking Authentication...</div>
+    }
 
-    constructor() {
-      super();
-      this.state = { width: 0, height: 0 };
-      this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    }
-    
-    componentDidMount() {
-      this.updateWindowDimensions();
-      window.addEventListener('resize', this.updateWindowDimensions);
-    }
-    
-    componentWillUnmount() {
-      window.removeEventListener('resize', this.updateWindowDimensions);
-    }
-    
-    updateWindowDimensions() {
-      this.setState({ width: window.innerWidth, height: window.innerHeight });
-    }
-  
-    render(){
       return (
       
-        <HashRouter>
+        <BrowserRouter>
           <header className="App-header">
             <Header/>
-            <img src={"https://via.placeholder.com/"+this.state.width+"x135"} className="imgBanner" />
+            {/*<img src={"https://via.placeholder.com/"+this.state.width+"x135"} className="imgBanner" />*/}
         <Nav justify variant="pills">
           <Nav.Item>
-            <NavLink to="/">
+            <NavLink to="/" activeClassName="active">
               <Nav.Link eventKey="1" href="/">
                 Inicio
               </Nav.Link>
@@ -59,37 +67,54 @@ class NavBar extends Component {
               <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>*/}
           </NavDropdown>
           <Nav.Item>
-            <NavLink to="/estadisticas" >
+            <NavLink to="/estadisticas" activeClassName="active">
               <Nav.Link eventKey="2" href="/estadisticas">
                 Estadísticas
               </Nav.Link>
             </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/contacto" >
+            <NavLink to="/contacto" activeClassName="active" >
               <Nav.Link eventKey="3" href="/constacto">
                 Contacto
               </Nav.Link>
             </NavLink>
           </Nav.Item>
-          <Nav.Item>
+          {/*<Nav.Item>
             <NavLink to="/sesion" >
               <Nav.Link eventKey="5" href="/sesion">
                 Iniciar Sesión
+              </Nav.Link>
+            </NavLink>
+          </Nav.Item>*/}
+          <Nav.Item>
+            <NavLink to="/login" activeClassName="active" >
+              <Nav.Link eventKey="6" href="/login">
+                Iniciar Sesión
+              </Nav.Link>
+            </NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to="/dashboard" activeClassName="active" >
+              <Nav.Link eventKey="7" href="/dashboard">
+                Tablero
               </Nav.Link>
             </NavLink>
           </Nav.Item>
         </Nav>
         </header>
         <div className="content">
-              <Route exact path="/" component={Home}/>
-              <Route path="/estadisticas" component={Statistics}/>
-              <Route path="/contacto" component={Form}/>
-              <Route path="/sesion" component={Sesion}/>
+          <Switch>
+              <PublicRoute exact path="/" component={Home}/>
+              <PublicRoute path="/estadisticas" component={Statistics}/>
+              <PublicRoute path="/contacto" component={Form}/>
+              {/*<PrivateRoute path="/sesion" component={Sesion}/>*/}
+              <PublicRoute path="/login" component={Login} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
+          </Switch>
             </div>
-        </HashRouter>
+        </BrowserRouter>
       );
-    }
 }
 
 export default NavBar;
